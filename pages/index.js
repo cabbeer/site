@@ -9,7 +9,10 @@ import {
   List,
   ListItem,
   useColorModeValue,
-  chakra
+  chakra,
+  Flex,
+  Center,
+  Spacer
 } from '@chakra-ui/react'
 import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -25,13 +28,13 @@ import Image from 'next/image'
 const Home = () => (
   <Layout>
     <Container>
-      <Box display={{ md: 'flex' }}>
-        <Box flexGrow={1}>
+      <Box display={{ md: 'flex' }} >
+        <Flex flexGrow={1} flexDirection={"column"} flexWrap={"wrap"} alignItems={"center"}>
           <Heading as="h2" variant="page-title">
             Kabir Sewani
           </Heading>
           <p>Developer. Designer. Tech Enthusiest.</p>
-        </Box>
+        </Flex>
       </Box>
 
       <Section>
@@ -49,6 +52,7 @@ const Home = () => (
             and data-driven. Let&apos;s collaborate and create something
             exceptional together!
           </Paragraph>
+          <Spacer mb="5"></Spacer>
           <Paragraph>
             I like helping people articulate their problems. Feel welcome to
             reach out even if you don&apos;t yet have a clear question in mind.
@@ -57,8 +61,8 @@ const Home = () => (
       </Section>
 
       <Section delay={0.1}>
-        <Heading as="h3" variant="section-title">
-          Work
+        <Heading as="h3" variant="section-title" align="center">
+          About
         </Heading>
         <Paragraph>
           Takuya is a freelance and a full-stack developer based in Osaka with a
@@ -85,22 +89,42 @@ const Home = () => (
         <Box align="center" my={4}>
           <Button
             as={NextLink}
-            href="/works"
+            href="/about"
             scroll={false}
             rightIcon={<ChevronRightIcon />}
             colorScheme="teal"
           >
-            My portfolio
+            Read About My Experience & Ethos
           </Button>
         </Box>
       </Section>
 
       <Section delay={0.2}>
-        <Heading as="h3" variant="section-title">
-          Bio
+        <Heading as="h3" variant="section-title" align="center">
+          Projects
         </Heading>
+
+        <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <GridItem
+            href="https://www.youtube.com/devaslife"
+            title="Dev as Life"
+            thumbnail={thumbYouTube}
+          >
+            My YouTube channel (&gt;150k subs)
+          </GridItem>
+          <GridItem
+            href="https://www.inkdrop.app/"
+            title="Inkdrop"
+            thumbnail={thumbInkdrop}
+          >
+            A Markdown note-taking app
+          </GridItem>
+        </SimpleGrid>
+
+
+
         <BioSection>
-          <BioYear>1984</BioYear>
+          <BioYear>ExpertSession</BioYear>
           Born in Osaka (大阪), Japan.
         </BioSection>
         <BioSection>
@@ -117,31 +141,32 @@ const Home = () => (
           <BioYear>2012 to present</BioYear>
           Working as a freelancer
         </BioSection>
+
+
+        <Box align="center" my={4}>
+          <Button
+            as={NextLink}
+            href="/about"
+            scroll={false}
+            rightIcon={<ChevronRightIcon />}
+            colorScheme="teal"
+          >
+           More Things I've Made
+          </Button>
+        </Box>
+
+
       </Section>
 
       <Section delay={0.3}>
-        <Heading as="h3" variant="section-title">
-          I ♥
-        </Heading>
-        <Paragraph>
-          Art, Music,{' '}
-          <Link href="https://illust.odoruinu.net/" target="_blank">
-            Drawing
-          </Link>
-          , Playing Drums,{' '}
-          <Link href="https://500px.com/p/craftzdog" target="_blank">
-            Photography
-          </Link>
-          , Leica, Machine Learning
-        </Paragraph>
-      </Section>
 
-      <Section delay={0.3}>
-        <Heading as="h3" variant="section-title">
+        <Heading as="h3" variant="section-title" align="center">
           On the web
         </Heading>
+        <Center>
         <List>
           <ListItem>
+          <BioYear>Connect with me on twitter</BioYear>
             <Link href="https://github.com/craftzdog" target="_blank">
               <Button
                 variant="ghost"
@@ -186,30 +211,15 @@ const Home = () => (
             </Link>
           </ListItem>
         </List>
+</Center>
 
-        <SimpleGrid columns={[1, 2, 2]} gap={6}>
-          <GridItem
-            href="https://www.youtube.com/devaslife"
-            title="Dev as Life"
-            thumbnail={thumbYouTube}
-          >
-            My YouTube channel (&gt;150k subs)
-          </GridItem>
-          <GridItem
-            href="https://www.inkdrop.app/"
-            title="Inkdrop"
-            thumbnail={thumbInkdrop}
-          >
-            A Markdown note-taking app
-          </GridItem>
-        </SimpleGrid>
 
         <Heading as="h3" variant="section-title">
           Newsletter
         </Heading>
         <p>
           Join me on a behind-the-scenes coding journey. Weekly updates on
-          projects, tutorials, and videos
+          deep learning, UX design, and the web
         </p>
 
         <Box align="center" my={4}>
