@@ -77,13 +77,17 @@ const Navbar = props => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/projects" path={path}>
-            Projects
+          <LinkItem href="/about" path={path}>
+            About
           </LinkItem>
           <LinkItem href="/articles" path={path}>
             Articles
           </LinkItem>
-          <LinkItem href="https://uses.craftz.dog/">Uses</LinkItem>
+          <LinkItem href="/projects" path={path}>
+            Projects
+          </LinkItem>
+
+          {/* <LinkItem href="https://uses.craftz.dog/">Uses</LinkItem>
           <LinkItem
             target="_blank"
             href="https://github.com/craftzdog/craftzdog-homepage"
@@ -95,7 +99,7 @@ const Navbar = props => {
           >
             <IoLogoGithub />
             Source
-          </LinkItem>
+          </LinkItem> */}
         </Stack>
 
         <Box flex={1} align="right">
@@ -111,23 +115,23 @@ const Navbar = props => {
               />
               <MenuList>
                 <MenuItem as={MenuLink} href="/">
+                  Home
+                </MenuItem>
+                <MenuItem as={MenuLink} href="/projects">
+                  Projects
+                </MenuItem>
+                <MenuItem as={MenuLink} href="/articles">
+                  Articles
+                </MenuItem>
+                <MenuItem as={MenuLink} href="/about">
                   About
                 </MenuItem>
-                <MenuItem as={MenuLink} href="/works">
-                  Works
-                </MenuItem>
-                <MenuItem as={MenuLink} href="/posts">
-                  Posts
-                </MenuItem>
-                <MenuItem as={MenuLink} href="https://uses.craftz.dog/">
-                  Uses
-                </MenuItem>
-                <MenuItem
+                {/* <MenuItem
                   as={Link}
                   href="https://github.com/craftzdog/craftzdog-homepage"
                 >
                   View Source
-                </MenuItem>
+                </MenuItem> */}
               </MenuList>
             </Menu>
           </Box>
