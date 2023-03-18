@@ -22,40 +22,39 @@ import thumbYouTube from '../public/images/links/youtube.png'
 import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
 import Image from 'next/image'
 
-
-const ProfileImage = chakra(Image, {
-  shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
-})
-
 const Home = () => (
   <Layout>
     <Container>
-
-
-    <Box display={{ md: 'flex' }}>
+      <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
             Kabir Sewani
           </Heading>
-          <p>Digital Craftsman ( Entrepenur / Developer / Designer )</p>
+          <p>Developer. Designer. Tech Enthusiest.</p>
         </Box>
       </Box>
 
-
-
-
-      <Box
-        borderRadius="lg"
-        mb={6}
-        p={3}
-        textAlign="center"
-        bg={useColorModeValue('whiteAlpha.500', 'darkOffset')}
-        css={{ backdropFilter: 'blur(10px)' }}
-      >
-        Hello, I&apos;m an indie app developer based in Japan!
-      </Box>
-
-
+      <Section>
+        <Box
+          borderRadius="lg"
+          mb={6}
+          p={3}
+          textAlign="center"
+          bg={useColorModeValue('whiteAlpha.500', 'darkOffset')}
+          css={{ backdropFilter: 'blur(10px)' }}
+        >
+          <Paragraph mb={4}>
+            As a full-stack developer with a background in digital marketing, I
+            pride myself on creating websites and campaigns that are effective
+            and data-driven. Let&apos;s collaborate and create something
+            exceptional together!
+          </Paragraph>
+          <Paragraph>
+            I like helping people articulate their problems. Feel welcome to
+            reach out even if you don&apos;t yet have a clear question in mind.
+          </Paragraph>
+        </Box>
+      </Section>
 
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
