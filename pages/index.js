@@ -12,7 +12,8 @@ import {
   chakra,
   Flex,
   Center,
-  Spacer
+  Spacer,
+  Divider
 } from '@chakra-ui/react'
 import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -28,8 +29,13 @@ import Image from 'next/image'
 const Home = () => (
   <Layout>
     <Container>
-      <Box display={{ md: 'flex' }} >
-        <Flex flexGrow={1} flexDirection={"column"} flexWrap={"wrap"} alignItems={"center"}>
+      <Box display={{ md: 'flex' }}>
+        <Flex
+          flexGrow={1}
+          flexDirection={'column'}
+          flexWrap={'wrap'}
+          alignItems={'center'}
+        >
           <Heading as="h2" variant="page-title">
             Kabir Sewani
           </Heading>
@@ -98,31 +104,65 @@ const Home = () => (
           </Button>
         </Box>
       </Section>
-
+    </Container>
+    <Container>
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title" align="center">
           Projects
         </Heading>
 
-        <SimpleGrid columns={[1, 2, 2]} gap={6}>
-          <GridItem
-            href="https://www.youtube.com/devaslife"
-            title="Dev as Life"
-            thumbnail={thumbYouTube}
+        <Flex columns={[1, 2, 2]} gap={6}>
+          <Box
+            bg="#a2f6cf"
+            padding="1.5em"
+            borderRadius="11px"
           >
-            My YouTube channel (&gt;150k subs)
-          </GridItem>
-          <GridItem
-            href="https://www.inkdrop.app/"
-            title="Inkdrop"
-            thumbnail={thumbInkdrop}
+            <Heading as="h3" size="md">
+              PersonalChef.live
+            </Heading>
+            <Paragraph>
+              A self-hostable open-source project that empowers chefs to showcase their culinary skills and connect with local customers seeking homemade dishes. Built with love using Pocketbase, Next.js, Chakra UI, React, and React Query.
+
+            </Paragraph>
+
+            <Button
+              as={NextLink}
+              href="/about"
+              scroll={false}
+              rightIcon={<ChevronRightIcon />}
+            >
+              View on Github
+            </Button>
+          </Box>
+
+          <Box
+            bg="#aee8fa"
+            padding="1.5em"
+            borderRadius="11px"
           >
-            A Markdown note-taking app
-          </GridItem>
-        </SimpleGrid>
 
+            <Heading as="h3" size="md">
+              TimeCraft
+            </Heading>
+            <Paragraph>
+              An open-source project for scheduling interview appointments. Built with Express, React, SQL, and Node, and tested with Jest, Storybook, and Cypress.
 
+            </Paragraph>
+            <Button
+                as={NextLink}
+                href="/about"
+                scroll={false}
+                rightIcon={<ChevronRightIcon />}
+            >
+              View on Github
+            </Button>
 
+          </Box>
+        </Flex>
+      </Section>
+    </Container>
+    <Container>
+      <Section>
         <BioSection>
           <BioYear>ExpertSession</BioYear>
           Born in Osaka (大阪), Japan.
@@ -142,7 +182,6 @@ const Home = () => (
           Working as a freelancer
         </BioSection>
 
-
         <Box align="center" my={4}>
           <Button
             as={NextLink}
@@ -151,75 +190,72 @@ const Home = () => (
             rightIcon={<ChevronRightIcon />}
             colorScheme="teal"
           >
-           More Things I've Made
+            More Things I've Made
           </Button>
         </Box>
-
-
       </Section>
 
       <Section delay={0.3}>
-
         <Heading as="h3" variant="section-title" align="center">
           On the web
         </Heading>
         <Center>
-        <List>
-          <ListItem>
-          <BioYear>Connect with me on twitter</BioYear>
-            <Link href="https://github.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoGithub />}
-              >
-                @craftzdog
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://twitter.com/inkdrop_app" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoTwitter />}
-              >
-                @inkdrop_app (English)
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://twitter.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoTwitter />}
-              >
-                @craftzdog (日本語)
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://instagram.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoInstagram />}
-              >
-                @craftzdog
-              </Button>
-            </Link>
-          </ListItem>
-        </List>
-</Center>
+          <List>
+            <ListItem>
+              <BioYear>Connect with me on twitter</BioYear>
+              <Link href="https://github.com/craftzdog" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoGithub />}
+                >
+                  @craftzdog
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://twitter.com/inkdrop_app" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoTwitter />}
+                >
+                  @inkdrop_app (English)
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://twitter.com/craftzdog" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoTwitter />}
+                >
+                  @craftzdog (日本語)
+                </Button>
+              </Link>
+            </ListItem>
 
+            <ListItem>
+              <Link href="https://instagram.com/craftzdog" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<IoLogoInstagram />}
+                >
+                  @craftzdog
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
+        </Center>
 
         <Heading as="h3" variant="section-title">
           Newsletter
         </Heading>
         <p>
-          Join me on a behind-the-scenes coding journey. Weekly updates on
-          deep learning, UX design, and the web
+          Join me on a behind-the-scenes coding journey. Weekly updates on deep
+          learning, UX design, and the web
         </p>
 
         <Box align="center" my={4}>
