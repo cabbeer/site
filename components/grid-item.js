@@ -45,6 +45,8 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
   </Box>
 )
 
+
+
 export const GridItemStyle = () => (
   <Global
     styles={`
